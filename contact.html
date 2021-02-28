@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COntact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class='page'>
+        <div class='section menu'>
+              <nav class="topnav">
+                <a href="my-portfolio.html">Home</a>
+                <a href="#about">About Me</a>
+                <a href="https://github.com/carolinadias25">Projects</a>
+                <a href="contact.html">Contact</a>
+              </nav>
+        </div>
+    </div>
+        <div class= "section header">
+        <h1 id='contact'>Contact</h1>
+    </div>
+    <div class = "section form">
+    <form id="form" action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" placeholder="Enter your name">
+            </li>
+            <li>
+                <label for="mail">E-mail:</label>
+                <input type="text" id="mail" name="user_email" placeholder="Enter your email">
+            </li>
+            <li>
+                <label for="message">Message:</label>
+                <textarea type="text" id="message" name="user_message"placeholder="Enter your message" style="height:200px"></textarea>
+            </li>
+            <li class="button">
+                <button id ="submit" type="submit">Send your message</button>
+        </li>
+        <li class="button">
+            <button id = "clear" type="clear">Clear</button>
+        </li>
+        </ul>
+    </form>
+    </div>
+    <script>
+
+        const form = document.getElementById("form");      
+        const clickSubmit = document.getElementById("submit");       
+        const clickReset = document.getElementById("clear"); 
+    
+        clickSubmit.addEventListener("click", Submit);
+        clickClear.addEventListener("click", Clear);
+        
+        function Submit(){
+    
+          const newName = document.getElementById("name").value;
+          const newEmail = document.getElementById("mail").value;
+          const newMessage = document.getElementById("message").value;
+          
+          if (newName == ""){
+    
+            alert("Please, add your name.");
+            return false;
+          }
+          if (newEmail  == "") {
+            alert("Please, add your email.");
+            return false;
+          } 
+          if (newMessage == ""){
+            alert("Please, add your message.");
+            return false;
+          } 
+          if (newName != "" || newEmail  != "" || newMessage != "") {
+            alert(newName + "," + newEmail + "," + newMessage);
+            form.submit();
+            }
+        }
+        function Reset(){
+          if (confirm("Please, press OK to erase your form.")){
+            alert("Form sucessfully erased!")
+            return false;
+          }
+        }
+    
+      </script>
+    
+</body>
+</html>
